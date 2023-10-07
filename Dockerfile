@@ -38,6 +38,9 @@ COPY . /app/
 
 # Collect static files
 RUN python manage.py collectstatic --noinput
+
+# running migrations
+RUN python manage.py migrate
 # RUN echo "y" | python manage.py search_index --rebuild
 # Expose the port that Django runs on
 EXPOSE 80
